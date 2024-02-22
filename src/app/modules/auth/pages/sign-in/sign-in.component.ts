@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
   passwordTextType!: boolean;
   show = false;
   password: any;
-  isSubmitted = false;
+
   constructor(private readonly _formBuilder: FormBuilder, private readonly _router: Router) {}
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-    this.isSubmitted = true;
+   
     console.log(this.form.value);
     // stop here if form is invalid
     if (this.form.invalid) {

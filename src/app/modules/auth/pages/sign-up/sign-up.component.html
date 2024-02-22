@@ -1,0 +1,101 @@
+<div class="sign-in-bg">
+    <div class="sign-design">
+      <div class="sign-section ">
+        <div class="sign-in ">
+          <div class="" >
+            <div >
+              <img class="-mt-20" src="../../../../../assets/bg/signup.png" alt="">
+            </div>
+          
+            <div class="form-section -mt-96">
+              <div class="form-design pb-8 -mt-96">
+                <h1 class="text-white text-3xl text-center font-semibold mt-8">Get Started Free</h1>
+                <p class="text-center text-gray-400 mt-2" style="font-size: 14px">Free Forever. No Credit Card Needed</p>
+              <form class="max-w-sm mx-auto" [formGroup]="form">
+                <label for="email-address-icon " class="block mb-2 text-sm font-medium  dark:text-white text-gray-400 ">Email Address</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex mr-2 items-center ps-3.5 pointer-events-none ml-3">
+                   <img src="../../../../../assets/bg/email.svg" alt="">
+                  </div>
+                  <input type="text" id="email-address-icon" formControlName="email" class="bg-gray-50  text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="yourname@gmail.com" >
+                </div>
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                  <div *ngIf="email?.errors ">
+  <p class="text-red-400 text-sm">Email address Is required </p>
+                  </div>
+                </div>
+                <label for="email-address-icon " class="block mb-2 text-sm font-medium  dark:text-white text-gray-400 "> Your Name</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex mr-2 items-center ps-3.5 pointer-events-none ml-3">
+                   <img src="../../../../../assets/bg/men.svg" alt="">
+                  </div>
+                  <input type="text" id="name-address-icon" formControlName="name" class="bg-gray-50  text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username" >
+                </div>
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                  <div *ngIf="name?.errors ">
+  <p class="text-red-400 text-sm">Name Is required </p>
+                  </div>
+                </div>
+                <label for="email-address-icon" class="block mb-2  font-medium  dark:text-white text-gray-400 mt-2 text-sm">Password</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 ml-3 pointer-events-none">
+                   <img src="../../../../../assets/bg/loock.svg" alt="">
+                  </div>
+                  <input [type]="password" id="email-address-icon" formControlName="password" class="bg-gray-50  text-white   text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="*******">
+                   <p (click)="onClick()" class="absolute top-3 right-2 bottom-0" style="background-color: transparent !important; ">
+                    <i class="fa fa-eye text-gray-400" aria-hidden="true" *ngIf="!show"></i>
+                    <i class="fa fa-eye-slash text-gray-400" aria-hidden="true" *ngIf="show"></i>
+                  </p>
+                 
+                </div>
+                <div class="text-red-400 text-sm" *ngIf="formPassword?.invalid && (formPassword?.dirty || formPassword?.touched) ">
+                  <span *ngIf="!formPassword?.value?.match('^(?=.*[A-Z])')"  class="block" [ngClass]="{'text-primary': formPassword?.value?.match('^(?=.*[A-Z])')}">At least one uppercase
+                                          letter.</span>
+                  <span *ngIf="!formPassword?.value?.match('(?=.*[a-z])')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('(?=.*[a-z])')}">At least one lowercase
+                                          letter.</span>
+                  <span *ngIf="!formPassword?.value?.match('(.*[0-9].*)')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('(.*[0-9].*)')}">At least one
+                                          digit.</span>
+                  <span *ngIf="!formPassword?.value?.match('(?=.*[!@#$%^&*])')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('(?=.*[!@#$%^&*])')}">At least one
+                                          special
+                                          character.</span>
+                  <span *ngIf="!formPassword?.value?.match('.{8,}')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('.{8,}')}">At least 8 characters
+                                          long.</span>
+               </div>
+                <div>
+                  <p class="text-right text-gray-400 my-2" style="font-size: 13px;">Forgot Password?</p>
+              
+                  <button (click)="onSubmit()" type="button" class="text-white w-full font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  ">Sign In</button>
+                </div>
+                <div class=" flex items-center gap-4 justify-between social-login mt-12">
+                 <div class="left-line  w-full"></div>
+              
+                <p class=" w-full text-gray-400 ">Or continue with</p>
+                  <div class="right-line w-full"></div>
+                </div>
+                <div class=" flex items-center justify-center mt-4">
+                 <div class="brand-logo ">
+                  <img src="../../../../../assets/bg/google.svg" alt="">
+                 </div>
+                 <div class="brand-logo">
+                  <img class="mt-3" src="../../../../../assets/bg/facebook.svg" alt="">
+                 </div>
+                 <div class="brand-logo">
+                  <img src="../../../../../assets/bg/apple.svg" alt="">
+                 </div>
+     
+                  
+                </div>
+  
+               <p class="text-center mt-4"> <small class="text-sm text-center text-gray-400">Already Register? <span class="text-green-500 cursor-pointer" routerLink="/sign-in">Sign in </span></small></p>
+              </form>
+              </div>
+            </div>
+           
+          </div>
+       
+        
+        </div>
+        </div>
+    </div>
+  
+  </div>
