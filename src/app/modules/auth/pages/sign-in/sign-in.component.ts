@@ -13,6 +13,7 @@ export class SignInComponent implements OnInit {
   passwordTextType!: boolean;
   show = false;
   password: any;
+  isSubmitted = false;
   constructor(private readonly _formBuilder: FormBuilder, private readonly _router: Router) {}
 
   ngOnInit(): void {
@@ -40,9 +41,14 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isSubmitted = true;
     console.log(this.form.value);
     // stop here if form is invalid
     if (this.form.invalid) {
+
+      for (const control of Object.keys(this.form.controls)) {
+        this.form.controls[control].markAsTouched();
+      }
       alert('Please enter a valid password and username')
       return;
     }
