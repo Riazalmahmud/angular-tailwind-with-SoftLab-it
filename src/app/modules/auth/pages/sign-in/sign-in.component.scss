@@ -1,0 +1,73 @@
+
+
+.sign-in-bg{
+  background: rgb(41,28,46);
+  background: linear-gradient(72deg, rgba(41,28,46,1) 0%, rgba(135,69,155,1) 35%);
+  height: 100%;
+  .sign-design{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .sign-section{
+      max-width: 432px;
+     margin: 0px auto;
+     background-color: #151315;
+     border-radius: 12px;
+     padding-top: 10px;
+    } 
+    .form-section{
+      background:url("../../../../../../src/assets/bg/form.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      .form-design{
+        background: linear-gradient(60deg, #0d0410, #481b62);
+        padding: 10px;
+        margin-top: -99px;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        padding-bottom: 144px;
+        opacity: 0.9;
+        height: 100%;
+        label{
+          font-size: 13px !important;
+          margin-top: 12px !important;
+        }
+        button{
+          background: linear-gradient(90.3deg, #9C3FE4 0.16%, #C65647 101.62%);
+        }
+        .left-line {
+          background: linear-gradient(270deg, rgba(217, 217, 217, 0.75) 0%, rgba(217, 217, 217, 0) 94.39%);
+      height: 1px;
+        }
+        .right-line {
+          background: linear-gradient(89.99deg, rgba(217, 217, 217, 0.75) 0%, rgba(217, 217, 217, 0) 105.61%);
+          height: 1px;
+        }
+        .social-login{
+          font-size: 14px;
+        }
+      }
+    }
+  
+  }
+  .brand-logo{
+    img{
+      width: 50px;
+    border: 1px solid #4A474A;
+    height: 40px;
+    margin: 4px;
+    border-radius: 12px;
+    cursor: pointer;
+    }
+  }
+ 
+
+  input{
+    text-indent: 30px;
+    background-color: transparent;
+    border: 0.5px solid #4a474a;
+
+
+
+  }
+}
