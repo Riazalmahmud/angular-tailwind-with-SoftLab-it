@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PasswordStrengthValidator } from 'src/app/shared/validators/custom.validation';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
   form!: FormGroup;
-  submitted = false;
   passwordTextType!: boolean;
   show = false;
   password: any;
@@ -19,12 +19,20 @@ export class SignInComponent implements OnInit {
     this.password = 'password';
     this.form = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: [
+        null,
+        {
+          validators: [Validators.required, Validators.pattern(PasswordStrengthValidator)],
+        },
+      ],
     });
   }
 
-  get f() {
-    return this.form.controls;
+  get email() {
+    return this.form.get('email');
+  }
+  get formPassword() {
+    return this.form.get('password');
   }
 
   togglePasswordTextType() {
@@ -32,15 +40,12 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    const { email, password } = this.form.value;
-
+    console.log(this.form.value);
     // stop here if form is invalid
     if (this.form.invalid) {
       return;
     }
-
-    this._router.navigate(['/']);
+    console.log('correct password');
   }
   onClick() {
     if (this.password === 'password') {
