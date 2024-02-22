@@ -43,6 +43,7 @@ export class SignInComponent implements OnInit {
     console.log(this.form.value);
     // stop here if form is invalid
     if (this.form.invalid) {
+      alert('Please enter a valid password and username')
       return;
     }
     console.log('correct password');

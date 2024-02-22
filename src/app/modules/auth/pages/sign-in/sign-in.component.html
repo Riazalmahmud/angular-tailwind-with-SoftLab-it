@@ -21,7 +21,7 @@
               </div>
               <div *ngIf="email?.invalid && email?.dirty">
                 <div *ngIf="email?.errors ">
-<p class="text-red-400 text-sm">Must be user email provide  </p>
+<p class="text-red-400 text-sm">UserName Must be in the form email address  </p>
                 </div>
               </div>
               <label for="email-address-icon" class="block mb-2  font-medium  dark:text-white text-gray-400 mt-2 text-sm">Password</label>
@@ -43,7 +43,7 @@
                                         letter.</span>
                 <span *ngIf="!formPassword?.value?.match('(.*[0-9].*)')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('(.*[0-9].*)')}">At least one
                                         digit.</span>
-                <span *ngIf="!formPassword?.value?.match('^(?=.*[A-Z])')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('^(?=.*[A-Z])')}">At least one
+                <span *ngIf="!formPassword?.value?.match('(?=.*[!@#$%^&*])')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('(?=.*[!@#$%^&*])')}">At least one
                                         special
                                         character.</span>
                 <span *ngIf="!formPassword?.value?.match('.{8,}')" class="block" [ngClass]="{'text-primary': formPassword?.value?.match('.{8,}')}">At least 8 characters
