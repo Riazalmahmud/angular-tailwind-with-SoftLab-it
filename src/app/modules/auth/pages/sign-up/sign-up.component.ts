@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PasswordStrengthValidator } from 'src/app/shared/validators/custom.validation';
@@ -9,18 +9,19 @@ import { PasswordStrengthValidator } from 'src/app/shared/validators/custom.vali
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnChanges {
   form!: FormGroup;
   passwordTextType!: boolean;
   show = false;
   password: any;
   passwordStrength!: number;
   value="a"
-  bar0!: string;
+  bar0!: string
   bar1!: string;
   bar2!: string;
-  bar3!: string;
+  
   constructor(private readonly _formBuilder: FormBuilder, private readonly _router: Router) {}
+ 
 
   ngOnInit(): void {
     this.password = 'password';
@@ -35,7 +36,10 @@ export class SignUpComponent implements OnInit {
       ],
     });
   }
-
+  ngOnChanges(): void {
+    this.form.get("password")?.value.length 
+    console.log(this.form.get("password")?.value.length)
+   }
   get email() {
     return this.form.get('email');
   }

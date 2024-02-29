@@ -1,5 +1,4 @@
 
-
 .sign-in-bg{
   background: rgb(41,28,46);
   background: linear-gradient(72deg, rgba(41,28,46,1) 0%, rgba(135,69,155,1) 35%);
@@ -13,6 +12,21 @@
      background-color: #151315;
      border-radius: 12px;
      padding-top: 10px;
+     .sign-in-image-section{
+
+    background:url("../../../../../assets/bg/d4d72d2f2507f1d163937f6b745b1d5c.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 494px;
+    margin-top: -179px;
+    margin-left: 93px;
+    width: 100%;
+    clip-path: inset(34% 21% 5% 10% round 0% 3% 0 33%);
+      
+    }
+    
+
     } 
     .form-section{
       background:url("../../../../../../src/assets/bg/form.png");

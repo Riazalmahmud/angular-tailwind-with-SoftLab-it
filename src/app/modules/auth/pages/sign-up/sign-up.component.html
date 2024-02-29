@@ -45,8 +45,10 @@
                    <p (click)="onClick()" class="absolute top-3 right-2 bottom-0" style="background-color: transparent !important; ">
                     <i class="fa fa-eye text-gray-400" aria-hidden="true" *ngIf="!show"></i>
                     <i class="fa fa-eye-slash text-gray-400" aria-hidden="true" *ngIf="show"></i>
+
+                    
                   </p>
-                 
+            
                 </div>
                 <div class="text-red-400 text-sm" *ngIf="formPassword?.invalid && (formPassword?.dirty || formPassword?.touched) ">
                   <span *ngIf="!formPassword?.value?.match('^(?=.*[A-Z])')"  class="block" [ngClass]="{'text-primary': formPassword?.value?.match('^(?=.*[A-Z])')}">At least one uppercase
